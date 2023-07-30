@@ -1,20 +1,19 @@
-// ignore: must_be_immutable
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:to_do_list/src/resources/app_assets.dart';
-import 'package:to_do_list/src/widgets/today_schedules_item_widget.dart';
+import 'package:to_do_list/src/shared/resources/app_assets.dart';
+import 'package:to_do_list/src/shared/widgets/today_schedule_item_widget.dart';
 
-class OtherSchedulesListWidget extends StatefulWidget {
-  const OtherSchedulesListWidget({
+class OtherScheduleWidget extends StatefulWidget {
+  const OtherScheduleWidget({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<OtherSchedulesListWidget> createState() => _TimeClockItemState();
+  State<OtherScheduleWidget> createState() => _TimeClockItemState();
 }
 
-class _TimeClockItemState extends State<OtherSchedulesListWidget> {
+class _TimeClockItemState extends State<OtherScheduleWidget> {
   final expandedController = ExpandableController();
 
   @override
@@ -121,8 +120,8 @@ class _TimeClockItemState extends State<OtherSchedulesListWidget> {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const TodaySchedulesItemWidget(),
-                  const TodaySchedulesItemWidget(),
+                  const TodayScheduleItemWidget(),
+                  const TodayScheduleItemWidget(),
                 ],
               ),
             ),

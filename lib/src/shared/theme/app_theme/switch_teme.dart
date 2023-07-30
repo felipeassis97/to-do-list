@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_list/src/theme/app_theme/color_scheme_theme.dart';
+import 'package:to_do_list/src/shared/theme/app_theme/color_scheme_theme.dart';
 
 class SwitchThemeApp {
   static SwitchThemeData theme(ThemeMode mode) {
