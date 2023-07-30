@@ -6,6 +6,7 @@ import 'package:to_do_list/src/theme/app_theme/color_scheme_theme.dart';
 import 'package:to_do_list/src/theme/app_theme/dialog_theme.dart';
 import 'package:to_do_list/src/theme/app_theme/extension_colors.dart';
 import 'package:to_do_list/src/theme/app_theme/input_decoration_theme.dart';
+import 'package:to_do_list/src/theme/app_theme/list_tile_theme.dart';
 import 'package:to_do_list/src/theme/app_theme/switch_teme.dart';
 import 'package:to_do_list/src/theme/app_theme/text_theme.dart';
 
@@ -23,6 +24,7 @@ class AppTheme {
         dialogTheme: DialogThemeApp.theme(ThemeMode.light),
         switchTheme: SwitchThemeApp.theme(ThemeMode.light),
         bottomSheetTheme: BottomSheetThemeApp.theme(ThemeMode.light),
+        listTileTheme: ListTileThemeApp.theme(ThemeMode.light),
       );
 
   static ThemeData darkTheme() => ThemeData(
@@ -39,5 +41,6 @@ class AppTheme {
         switchTheme: SwitchThemeApp.theme(ThemeMode.dark),
         bottomSheetTheme: BottomSheetThemeApp.theme(ThemeMode.dark),
         scaffoldBackgroundColor: darkColorScheme.background,
+        listTileTheme: ListTileThemeApp.theme(ThemeMode.dark),
       );
 }

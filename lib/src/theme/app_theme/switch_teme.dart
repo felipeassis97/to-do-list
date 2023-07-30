@@ -7,15 +7,13 @@ class SwitchThemeApp {
         mode == ThemeMode.light ? lightColorScheme : darkColorScheme;
     return SwitchThemeData(
       trackColor: MaterialStateProperty.all(colorScheme.primary),
-      trackOutlineColor: MaterialStateProperty.all(colorScheme.primary),
+      trackOutlineColor: MaterialStateProperty.all(colorScheme.onPrimary),
       thumbColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.pressed)) {
-          return colorScheme.onPrimary;
-        } else if (states.contains(MaterialState.selected)) {
-          colorScheme.primaryContainer;
+          return colorScheme.tertiary;
         }
 
-        return colorScheme.primaryContainer;
+        return colorScheme.outline;
       }),
       overlayColor:
           MaterialStateProperty.all(colorScheme.secondary.withOpacity(0.5)),
