@@ -1,5 +1,5 @@
 import 'package:result_dart/result_dart.dart';
-import 'package:to_do_list/src/modules/schedule/domain/repository/schedule_repository.dart';
+import 'package:to_do/src/modules/schedule/domain/repository/schedule_repository.dart';
 
 abstract interface class DeleteAllSchedules {
   Result<Unit, Exception> deleteAllSchedules();

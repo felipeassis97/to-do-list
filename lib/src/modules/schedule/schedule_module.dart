@@ -1,13 +1,12 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:realm/realm.dart';
-import 'package:to_do_list/src/modules/schedule/data/datasource/cache/cache_schedule.dart';
-import 'package:to_do_list/src/modules/schedule/data/datasource/cache/cache_schedule_impl.dart';
-import 'package:to_do_list/src/modules/schedule/data/repository/schedule_repository_impl.dart';
-import 'package:to_do_list/src/modules/schedule/domain/repository/schedule_repository.dart';
-import 'package:to_do_list/src/modules/schedule/domain/usecases/delete_all_schedules.dart';
-import 'package:to_do_list/src/modules/schedule/domain/usecases/fetch_schedules.dart';
-import 'package:to_do_list/src/modules/schedule/domain/usecases/save_schedule.dart';
-import 'package:to_do_list/src/modules/schedule/presenter/pages/home_page.dart';
+import 'package:to_do/src/modules/schedule/data/datasource/cache/cache_schedule.dart';
+import 'package:to_do/src/modules/schedule/data/datasource/cache/cache_schedule_impl.dart';
+import 'package:to_do/src/modules/schedule/data/repository/schedule_repository_impl.dart';
+import 'package:to_do/src/modules/schedule/domain/repository/schedule_repository.dart';
+import 'package:to_do/src/modules/schedule/domain/usecases/delete_all_schedules.dart';
+import 'package:to_do/src/modules/schedule/domain/usecases/fetch_schedules.dart';
+import 'package:to_do/src/modules/schedule/presenter/pages/home_page.dart';
 
 class ScheduleModule extends Module {
   @override
@@ -19,8 +18,6 @@ class ScheduleModule extends Module {
         Bind.factory<RepositorySchedule>(
             (i) => RepositoryScheduleImpl(datasource: i<CacheSchedule>())),
         // usecases
-        Bind.factory<SaveSchedules>(
-            (i) => SaveSchedulesImpl(repository: i<RepositorySchedule>())),
         Bind.factory<FetchSchedules>(
             (i) => FetchSchedulesImpl(repository: i<RepositorySchedule>())),
         Bind.factory<DeleteAllSchedules>(

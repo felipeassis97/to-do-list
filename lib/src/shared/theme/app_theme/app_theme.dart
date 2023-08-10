@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_list/src/shared/theme/app_theme/app_bar_theme.dart';
-import 'package:to_do_list/src/shared/theme/app_theme/bottom_sheet_theme.dart';
-import 'package:to_do_list/src/shared/theme/app_theme/buttons_theme.dart';
-import 'package:to_do_list/src/shared/theme/app_theme/color_scheme_theme.dart';
-import 'package:to_do_list/src/shared/theme/app_theme/dialog_theme.dart';
-import 'package:to_do_list/src/shared/theme/app_theme/extension_colors.dart';
-import 'package:to_do_list/src/shared/theme/app_theme/input_decoration_theme.dart';
-import 'package:to_do_list/src/shared/theme/app_theme/list_tile_theme.dart';
-import 'package:to_do_list/src/shared/theme/app_theme/switch_teme.dart';
-import 'package:to_do_list/src/shared/theme/app_theme/text_theme.dart';
+import 'package:to_do/src/shared/theme/app_theme/app_bar_theme.dart';
+import 'package:to_do/src/shared/theme/app_theme/bottom_sheet_theme.dart';
+import 'package:to_do/src/shared/theme/app_theme/buttons_theme.dart';
+import 'package:to_do/src/shared/theme/app_theme/color_scheme_theme.dart';
+import 'package:to_do/src/shared/theme/app_theme/dialog_theme.dart';
+import 'package:to_do/src/shared/theme/app_theme/extension_colors.dart';
+import 'package:to_do/src/shared/theme/app_theme/input_decoration_theme.dart';
+import 'package:to_do/src/shared/theme/app_theme/list_tile_theme.dart';
+import 'package:to_do/src/shared/theme/app_theme/switch_teme.dart';
+import 'package:to_do/src/shared/theme/app_theme/text_theme.dart';
 
 class AppTheme {
   static ThemeData theme() => ThemeData(

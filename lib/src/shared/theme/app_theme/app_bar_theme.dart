@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_list/src/shared/theme/app_theme/color_scheme_theme.dart';
-import 'package:to_do_list/src/shared/theme/app_theme/text_theme.dart';
+import 'package:to_do/src/shared/theme/app_theme/color_scheme_theme.dart';
+import 'package:to_do/src/shared/theme/app_theme/text_theme.dart';
 
 class AppBarThemeApp {
   static AppBarTheme theme(ThemeMode mode) {
@@ -18,7 +18,7 @@ class AppBarThemeApp {
       iconTheme: IconThemeData(
         color: colorScheme.onBackground,
       ),
-      centerTitle: false,
+      centerTitle: true,
     );
   }
 }

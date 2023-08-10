@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_list/src/modules/schedule/domain/entities/schedule_entity.dart';
-import 'package:to_do_list/src/shared/widgets/other_schedule_widget.dart';
+import 'package:to_do/src/modules/schedule/domain/entities/schedule_entity.dart';
+import 'package:to_do/src/shared/widgets/other_schedule_widget.dart';
 
 class OtherScheduleListWidget extends StatelessWidget {
   final List<ScheduleEntity> schedules;

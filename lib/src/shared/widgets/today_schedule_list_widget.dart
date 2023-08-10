@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:to_do_list/src/modules/schedule/domain/entities/schedule_entity.dart';
-import 'package:to_do_list/src/shared/resources/app_assets.dart';
-import 'package:to_do_list/src/shared/widgets/today_schedule_item_widget.dart';
+import 'package:to_do/src/modules/schedule/domain/entities/schedule_entity.dart';
+import 'package:to_do/src/shared/resources/app_assets.dart';
+import 'package:to_do/src/shared/widgets/today_schedule_item_widget.dart';
 
 class TodayScheduleWidget extends StatefulWidget {
   final List<ScheduleEntity> schedules;

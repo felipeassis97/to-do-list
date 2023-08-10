@@ -1,8 +1,8 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:to_do_list/src/shared/resources/app_assets.dart';
-import 'package:to_do_list/src/shared/widgets/today_schedule_item_widget.dart';
+import 'package:to_do/src/shared/resources/app_assets.dart';
+import 'package:to_do/src/shared/theme/app_theme/custom_icons.dart';
+import 'package:to_do/src/shared/widgets/today_schedule_item_widget.dart';
 
 class OtherScheduleWidget extends StatefulWidget {
   const OtherScheduleWidget({
@@ -65,11 +65,8 @@ class _TimeClockItemState extends State<OtherScheduleWidget> {
                         ),
                   ),
                   const Spacer(),
-                  SvgPicture.asset(
-                    AppAssets.expand,
-                    colorFilter: ColorFilter.mode(
-                        Theme.of(context).colorScheme.onBackground,
-                        BlendMode.srcIn),
+                  const CustomIcon(
+                    path: AppAssets.expand,
                   ),
                 ],
               ),
@@ -109,11 +106,8 @@ class _TimeClockItemState extends State<OtherScheduleWidget> {
                                 ),
                           ),
                           const Spacer(),
-                          SvgPicture.asset(
-                            AppAssets.expand,
-                            colorFilter: ColorFilter.mode(
-                                Theme.of(context).colorScheme.onBackground,
-                                BlendMode.srcIn),
+                          const CustomIcon(
+                            path: AppAssets.collapse,
                           ),
                         ],
                       ),

@@ -2,11 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "to-do-list",
+            "name": "to_do",
             "request": "launch",
-            "type": "dart", 
+            "type": "dart",
             "flutterMode": "debug"
-        },
-       
+        }
     ]
 }

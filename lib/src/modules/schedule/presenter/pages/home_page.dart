@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:to_do_list/src/modules/schedule/domain/entities/schedule_entity.dart';
-import 'package:to_do_list/src/modules/schedule/presenter/controller/schedule_controller.dart';
-import 'package:to_do_list/src/shared/resources/app_assets.dart';
-import 'package:to_do_list/src/shared/widgets/other_schedule_list_widget.dart';
-import 'package:to_do_list/src/shared/widgets/today_schedule_list_widget.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:to_do/src/modules/schedule/presenter/controller/schedule_controller.dart';
+import 'package:to_do/src/shared/resources/app_assets.dart';
+import 'package:to_do/src/shared/theme/app_theme/custom_icons.dart';
+import 'package:to_do/src/shared/widgets/custom_illustration.dart';
+import 'package:to_do/src/shared/widgets/other_schedule_list_widget.dart';
+import 'package:to_do/src/shared/widgets/today_schedule_list_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,19 +15,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    controller.getAllSchedules();
+  }
+
   final controller = ScheduleController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('To Do'),
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.only(right: 16),
-            child: SvgPicture.asset(
-              AppAssets.settings,
-              colorFilter: ColorFilter.mode(
-                  Theme.of(context).colorScheme.onBackground, BlendMode.srcIn),
+            padding: EdgeInsets.only(right: 16),
+            child: CustomIcon(
+              path: AppAssets.settings,
+              size: 36,
             ),
           )
         ],
@@ -40,7 +46,11 @@ class _HomePageState extends State<HomePage> {
                 valueListenable: controller.schedules,
                 builder: (context, value, child) {
                   return value.isEmpty
-                      ? const Text('Empty')
+                      ? const Center(
+                          child: CustomIllustration(
+                            path: AppAssets.empty,
+                          ),
+                        )
                       : TodayScheduleWidget(
                           schedules: value,
                         );
@@ -59,24 +69,11 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: SvgPicture.asset(
-          AppAssets.edit,
-          height: 32,
-          colorFilter: ColorFilter.mode(
-              Theme.of(context).colorScheme.onBackground, BlendMode.srcIn),
+        child: const CustomIcon(
+          path: AppAssets.edit,
+          size: 28,
         ),
-        onPressed: () {
-          controller.saveSchedule(
-              schedule: ScheduleEntity(
-                  title: 'Test 1',
-                  description:
-                      'kjsdfhkjdsh sdkjfhskdj sdkjfhsd fdskjfhdskjf utsduyas',
-                  initialDate: DateTime.now(),
-                  targetDate: DateTime.now(),
-                  done: true));
-
-          controller.getAllSchedules();
-        },
+        onPressed: () => Modular.to.navigate('/create'),
       ),
     );
   }

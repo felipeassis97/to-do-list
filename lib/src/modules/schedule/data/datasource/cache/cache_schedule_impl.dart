@@ -1,7 +1,7 @@
 import 'package:realm/realm.dart';
-import 'package:to_do_list/src/modules/schedule/data/datasource/cache/cache_schedule.dart';
-import 'package:to_do_list/src/modules/schedule/domain/entities/schedule_entity.dart';
-import 'package:to_do_list/src/shared/services/realm/models/schedule_model.dart';
+import 'package:to_do/src/modules/schedule/data/datasource/cache/cache_schedule.dart';
+import 'package:to_do/src/modules/schedule/domain/entities/schedule_entity.dart';
+import 'package:to_do/src/shared/services/realm/models/schedule_model.dart';
 
 class CacheScheduleImpl implements CacheSchedule {
   final Realm realm;
@@ -33,22 +33,6 @@ class CacheScheduleImpl implements CacheSchedule {
       }
 
       return schedules;
-    } on Exception catch (e) {
-      throw Exception(e);
-    }
-  }
-
-  @override
-  void saveSchedule({required ScheduleEntity schedule}) {
-    try {
-      realm.write(() {
-        realm.add<ScheduleModel>(ScheduleModel(
-            schedule.title,
-            schedule.description,
-            schedule.initialDate,
-            schedule.targetDate,
-            schedule.done));
-      });
     } on Exception catch (e) {
       throw Exception(e);
     }
