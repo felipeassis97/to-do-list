@@ -17,9 +17,11 @@ class OtherScheduleListWidget extends StatelessWidget {
       shrinkWrap: true,
       itemCount: schedules.length,
       itemBuilder: (context, index) {
-        return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 4),
-          child: OtherScheduleWidget(),
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 4),
+          child: OtherScheduleWidget(
+            schedule: schedules[index],
+          ),
         );
       },
     );

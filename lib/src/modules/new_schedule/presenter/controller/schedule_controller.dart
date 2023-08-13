@@ -17,8 +17,8 @@ class ScheduleController extends ChangeNotifier {
     final schedule = SaveScheduleEntity(
         title: title,
         description: description,
-        initialDate: startDate,
-        targetDate: endDate);
+        initialDate: formatDate(startDate),
+        targetDate: formatDate(endDate));
 
     final result = saveData.saveSchedules(schedule: schedule);
     result.fold(
@@ -30,5 +30,9 @@ class ScheduleController extends ChangeNotifier {
         notifyListeners();
       },
     );
+  }
+
+  DateTime formatDate(DateTime date) {
+    return DateTime(date.year, date.month, date.day, date.hour, date.minute);
   }
 }

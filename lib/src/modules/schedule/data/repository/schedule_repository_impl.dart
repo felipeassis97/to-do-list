@@ -28,4 +28,14 @@ class RepositoryScheduleImpl implements RepositorySchedule {
       return Failure(Exception(e));
     }
   }
+
+  @override
+  Result<List<ScheduleEntity>, Exception> fetchLateSchedules() {
+    try {
+      final result = datasource.getLateSchedule();
+      return Success(result);
+    } on Exception catch (e) {
+      return Failure(Exception(e));
+    }
+  }
 }

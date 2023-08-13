@@ -5,6 +5,7 @@ import 'package:to_do/src/modules/schedule/data/datasource/cache/cache_schedule_
 import 'package:to_do/src/modules/schedule/data/repository/schedule_repository_impl.dart';
 import 'package:to_do/src/modules/schedule/domain/repository/schedule_repository.dart';
 import 'package:to_do/src/modules/schedule/domain/usecases/delete_all_schedules.dart';
+import 'package:to_do/src/modules/schedule/domain/usecases/fetch_late_schedules.dart';
 import 'package:to_do/src/modules/schedule/domain/usecases/fetch_schedules.dart';
 import 'package:to_do/src/modules/schedule/presenter/pages/home_page.dart';
 
@@ -20,6 +21,8 @@ class ScheduleModule extends Module {
         // usecases
         Bind.factory<FetchSchedules>(
             (i) => FetchSchedulesImpl(repository: i<RepositorySchedule>())),
+        Bind.factory<FetchLateSchedules>(
+            (i) => FetchLateSchedulesImpl(repository: i<RepositorySchedule>())),
         Bind.factory<DeleteAllSchedules>(
             (i) => DeleteAllSchedulesImpl(repository: i<RepositorySchedule>())),
       ];

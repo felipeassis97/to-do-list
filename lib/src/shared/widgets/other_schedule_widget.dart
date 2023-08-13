@@ -1,12 +1,16 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
+import 'package:to_do/src/modules/schedule/domain/entities/schedule_entity.dart';
 import 'package:to_do/src/shared/resources/app_assets.dart';
 import 'package:to_do/src/shared/theme/app_theme/custom_icons.dart';
 import 'package:to_do/src/shared/widgets/today_schedule_item_widget.dart';
 
 class OtherScheduleWidget extends StatefulWidget {
+  final ScheduleEntity schedule;
   const OtherScheduleWidget({
     Key? key,
+    required this.schedule,
   }) : super(key: key);
 
   @override
@@ -59,7 +63,7 @@ class _TimeClockItemState extends State<OtherScheduleWidget> {
                   ),
                   const SizedBox(width: 10),
                   Text(
-                    'Tomorrow Tasks ',
+                    widget.schedule.title,
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
@@ -114,8 +118,7 @@ class _TimeClockItemState extends State<OtherScheduleWidget> {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const TodayScheduleItemWidget(),
-                  const TodayScheduleItemWidget(),
+                  TodayScheduleItemWidget(schedule: widget.schedule),
                 ],
               ),
             ),

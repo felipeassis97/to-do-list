@@ -7,7 +7,7 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const themeMode = ThemeMode.light;
+    const themeMode = ThemeMode.dark;
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'To Do App',

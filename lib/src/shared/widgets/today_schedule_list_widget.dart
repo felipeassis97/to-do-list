@@ -40,7 +40,7 @@ class _TodayScheduleWidgetState extends State<TodayScheduleWidget> {
             shrinkWrap: true,
             itemCount: widget.schedules.length,
             itemBuilder: (context, index) {
-              return const TodayScheduleItemWidget();
+              return TodayScheduleItemWidget(schedule: widget.schedules[index]);
             }),
       ],
     );

@@ -7,6 +7,8 @@ final class AppAssets {
   static const edit = 'assets/icons/edit.svg';
   static const navigateBack = 'assets/icons/navigate_back.svg';
   static const calendar = 'assets/icons/calendar.svg';
+  static const calendarCheck = 'assets/icons/calendar_check.svg';
+  static const calendarTime = 'assets/icons/calendar_time.svg';
   static const time = 'assets/icons/time.svg';
 
   //Images
